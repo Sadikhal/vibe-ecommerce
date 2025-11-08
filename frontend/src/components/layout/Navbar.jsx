@@ -31,6 +31,7 @@ const Navbar = () => {
     return () => clearTimeout(debounceTimer);
   }, [localSearch, dispatch, navigate]);
 
+  
   //  Manual form submit 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
