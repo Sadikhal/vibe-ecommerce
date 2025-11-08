@@ -5,13 +5,9 @@ import cors from 'cors';
 import productRoutes from "./routes/product.route.js";
 import cartRoutes from "./routes/cart.route.js";
 import checkoutRoutes from "./routes/order.route.js";
-
-
-
 import { connect } from './lib/db.js';
 
 dotenv.config();
-
 const app = express(); 
 
 // Middlewares
@@ -27,9 +23,6 @@ app.use(
 app.use("/api/product", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/checkout", checkoutRoutes);
-
-
-
 
 // Error handler
 app.use((err, req, res, next) => {
