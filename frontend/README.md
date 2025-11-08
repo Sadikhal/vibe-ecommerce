@@ -1,7 +1,3 @@
-Here you go — a clean, professional, “drop-in” `README.md` you can paste into your repo. I wrote it to match exactly what we built: your backend (Express + Mongo + Fake Store API seed), frontend (React + Tailwind + Redux Toolkit), cart flow, 3-letter debounced search, checkout with mock receipt, and toasts.
-
----
-
 # Mock E-Com Cart — Vibe Commerce Internship Assignment
 
 A minimal, production-quality full-stack cart app that demonstrates core e-commerce flows:
