@@ -183,7 +183,6 @@ cp .env.example .env
 PORT=3002
 MONGO_URL=mongodb://localhost:27017/vibe_commerce
 CLIENT_URL=http://localhost:5173
-DASHBOARD_URL=http://localhost:5173
 ```
 
 Install & run:
@@ -193,7 +192,7 @@ yarn
 yarn dev
 # or
 npm install
-npm run dev
+node app.js
 ```
 
 You should see:
@@ -247,14 +246,5 @@ Open: **[http://localhost:5173](http://localhost:5173)**
 Add your Loom/YouTube (unlisted) link here:
 
 * Demo (1–2 min): *<your link>*
-
----
-
-## ✅ Notes & Decisions
-
-* Only **real fields** used from backend: `title`, `price`, `image`, `description`, `category`, `qty`
-* UI preserved exactly where requested; unnecessary UI fields removed (e.g., offer/size/deliveryDays)
-* Clean separation: backend handles data, frontend handles UI + state
-* No external hosting required; GitHub repo with clear setup
 
 ---
