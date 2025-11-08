@@ -24,11 +24,11 @@ Use these exact filenames so the README shows them automatically:
 
 | Home                               | Cart                               |
 | ---------------------------------- | ---------------------------------- |
-| ![Home](docs/screenshots/home.png) | ![Cart](docs/screenshots/cart.png) |
+| ![Home](https://res.cloudinary.com/dftleqqgr/image/upload/v1762581119/Screenshot_272_bzn56c.png) | ![Cart](https://res.cloudinary.com/dftleqqgr/image/upload/v1762581118/Screenshot_273_kxohn8.png) |
 
 | Checkout                                   | Accepted (Receipt)                         |
 | ------------------------------------------ | ------------------------------------------ |
-| ![Checkout](docs/screenshots/checkout.png) | ![Accepted](docs/screenshots/accepted.png) |
+| ![Checkout](https://res.cloudinary.com/dftleqqgr/image/upload/v1762581118/Screenshot_274_gq8d5v.png) | ![Accepted](https://res.cloudinary.com/dftleqqgr/image/upload/v1762581118/Screenshot_275_rvs6p3.png) |
 
 ---
 
@@ -39,43 +39,57 @@ Use these exact filenames so the README shows them automatically:
 ├── backend/
 │   ├── controllers/
 │   │   ├── product.controller.js
+│   ├── └── cart.controller.js
 │   │   └── checkout.controller.js
 │   ├── models/
 │   │   ├── product.model.js
 │   │   └── cart.model.js
+│   │   └── order.model.js
 │   ├── routes/
 │   │   ├── product.route.js
 │   │   ├── cart.route.js
 │   │   └── checkout.route.js
 │   ├── lib/
 │   │   ├── db.js
-│   │   ├── socket.js (if present)
 │   │   └── createError.js
-│   ├── middleware/
-│   │   └── verifyTokens.js (if present)
 │   ├── app.js
 │   └── .env
 │
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── ListingCard.jsx
-    │   │   ├── sections/
-    │   │   │   ├── CartItem.jsx
-    │   │   │   └── PriceDetails.jsx
-    │   │   └── ui/
-    │   │       └── Loader.jsx
-    │   ├── pages/
-    │   │   └── Checkout.jsx
-    │   ├── redux/
-    │   │   ├── store.js
-    │   │   ├── productSlice.js
-    │   │   ├── cartSlice.js
-    │   │   └── orderSlice.js
-    │   ├── lib/
-    │   │   └── apiRequest.js
-    │   └── App.jsx / main.jsx / routes
-    └── .env
+frontend/
+├── src/
+│   ├── assets/               # Static images
+│   ├── components/
+│   │   ├── layout/           # Navbar, layout wrapper components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Container.jsx
+│   │   │   └── index.js
+│   │   ├── ui/               # Reusable UI components
+│   │   │   ├── Button.jsx
+│   │   │   ├── Loaders.jsx
+│   │   ├── CartItem.jsx
+│   │   ├── ListingCard.jsx
+│   │   ├── PriceDetails.jsx
+│   │   ├── ReceiptModal.jsx
+│   ├── lib/                  # Utilities & API setup
+│   │   ├── apiRequest.js
+│   │   ├── motion.js
+│   │   └── utils.js
+│   ├── pages/                # Application pages
+│   │   ├── Home.jsx
+│   │   ├── Cart.jsx
+│   │   ├── Checkout.jsx
+│   │   ├── NotFound.jsx
+│   ├── redux/                # State management
+│   │   ├── productSlice.js
+│   │   ├── cartSlice.js
+│   │   └── store.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   ├── index.css
+├── .env
+├── package.json
+└── vite.config.js
 ```
 
 ---
