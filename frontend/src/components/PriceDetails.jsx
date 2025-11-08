@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/Button";
+import { formatPrice } from "../lib/utils";
 
 const PriceDetails = ({
   items = [],         
@@ -18,12 +19,12 @@ const PriceDetails = ({
       <div className="space-y-3 py-4 border-[#c0c2bf] border-b text-sm sm:text-base">
         <div className="flex justify-between">
           <span>Total MRP</span>
-          <span>₹{totalPrice.toFixed(2)}</span>
+          <span>{formatPrice(totalPrice)}</span>
         </div>
 
         <div className="flex justify-between">
           <span>Discount on MRP</span>
-          <span className="text-teal-700">-₹{totalDiscount.toFixed(2)}</span>
+          <span className="text-teal-700">-₹{formatPrice(totalDiscount)}</span>
         </div>
 
         <div className="flex justify-between">
@@ -34,7 +35,7 @@ const PriceDetails = ({
         <div className="flex justify-between pb-4">
           <span>Shipping Fee</span>
           <div className="flex gap-2">
-            <span className="text-teal-700 line-through">₹78.00</span>
+            <span className="text-teal-700 line-through">$78.00</span>
             <span>Free</span>
           </div>
         </div>
@@ -43,7 +44,7 @@ const PriceDetails = ({
       <div className="py-4">
         <div className="flex justify-between font-bold sm:text-lg text-base font-robotos">
           <span>Total Amount</span>
-          <span>₹{totalPrice.toFixed(2)}</span>
+          <span>{formatPrice(totalPrice)}</span>
         </div>
 
         {isCheckout ? (

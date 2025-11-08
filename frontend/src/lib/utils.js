@@ -10,3 +10,11 @@ export const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString('en-GB', options);
 };
 
+export const formatPrice = (amount) => {
+  if (!amount) return "₹0.00";
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "USD", 
+    minimumFractionDigits: 2,
+  }).format(amount);
+};

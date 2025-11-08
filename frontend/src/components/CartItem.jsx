@@ -1,5 +1,6 @@
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { formatPrice } from "../lib/utils";
 
 const CartItem = ({ item, onRemove, onQtyChange, showQuantity = true }) => {
   const dec = () => onQtyChange(Math.max(1, (item.quantity || 1) - 1));
@@ -56,7 +57,7 @@ const CartItem = ({ item, onRemove, onQtyChange, showQuantity = true }) => {
 
             <div className="flex items-center gap-2">
               <span className="font-medium text-gray-800 text-xs sm:text-sm">
-                ₹{Number(item.price).toFixed(2)}
+                {formatPrice(item?.price)}
               </span>
             </div>
 

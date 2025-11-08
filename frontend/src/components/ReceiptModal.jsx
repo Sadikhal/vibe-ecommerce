@@ -1,9 +1,10 @@
+import { formatDate, formatPrice } from "../lib/utils";
 import { Button } from "./ui/Button";
 
 const ReceiptModal = ({ receipt, onClose }) => {
-  const dateStr = receipt?.timestamp
-    ? new Date(receipt.timestamp).toLocaleString()
-    : "";
+  // const dateStr = receipt?.timestamp
+  //   ? new Date(receipt.timestamp).toLocaleString()
+  //   : "";
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
@@ -14,7 +15,7 @@ const ReceiptModal = ({ receipt, onClose }) => {
           <p><span className="font-medium">Order ID:</span> {receipt?.orderId}</p>
           <p><span className="font-medium">Name:</span> {receipt?.customer?.name}</p>
           <p><span className="font-medium">Email:</span> {receipt?.customer?.email}</p>
-          <p><span className="font-medium">Placed At:</span> {dateStr}</p>
+          <p><span className="font-medium">Placed At:</span> {formatDate(receipt.timestamp)}</p>
         </div>
 
         <div className="border border-slate-300 rounded-md overflow-hidden mb-4">
@@ -24,7 +25,7 @@ const ReceiptModal = ({ receipt, onClose }) => {
               <li key={i} className="px-3 py-2 text-sm flex md:flex-row flex-col justify-between gap-2">
                 <span>Id : {item.product}</span>
                 <span>Qty : {item.qty}</span>
-                <span>₹{Number(item.price).toFixed(2)}</span>
+                <span>{formatPrice(item.price)}</span>
               </li>
             ))}
           </ul>
@@ -32,7 +33,7 @@ const ReceiptModal = ({ receipt, onClose }) => {
 
         <div className="flex justify-between items-center mb-4">
           <span className="text-base font-semibold font-robotos">Total</span>
-          <span className="text-base font-bold">₹{Number(receipt?.total || 0).toFixed(2)}</span>
+          <span className="text-base font-bold">{formatPrice(receipt?.total)}</span>
         </div>
 
         <div className="flex justify-end">

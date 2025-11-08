@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { itemVariants } from "../lib/motion";
 import { Button } from "./ui/Button";
+import { formatPrice } from "../lib/utils";
 
 const ListingCard = ({ data }) => {
   const dispatch = useDispatch();
@@ -15,9 +16,7 @@ const ListingCard = ({ data }) => {
   };
 
   return (
-    <motion.div variants={itemVariants}>
-      <Link
-        to={`/product/${data?._id}`}
+      <div
         className="col-span-1 cursor-pointer w-full group relative border rounded-xl flex flex-col pb-1 border-borderSlate"
       >
         <div className="w-full transition duration-0">
@@ -37,7 +36,7 @@ const ListingCard = ({ data }) => {
             </div>
             <div className="flex flex-row gap-2 text-left items-baseline px-2 overflow-hidden">
               <div className="font-bold font-assistant sm:text-[14px] text-[12px] text-slate-950 whitespace-nowrap">
-                ₹ {data?.price}
+                 {formatPrice(data?.price)}
               </div>
             </div>
           </div>
@@ -53,8 +52,7 @@ const ListingCard = ({ data }) => {
             </Button>
           </div>
         </div>
-      </Link>
-    </motion.div>
+      </div>
   );
 };
 
