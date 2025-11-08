@@ -1,14 +1,13 @@
 import CartItem from "../models/cart.model.js";
 import Order from "../models/order.model.js";
 import { createError } from "../lib/createError.js";
+import { getUserId } from "../lib/utils.js";
 
-const getUserId = (req) => {
-  return req.headers["x-user-id"] || req.body?.userId || "demoUser";
-};
+
 
 export const checkout = async (req, res, next) => {
   try {
-    const userId = getUserId(req);
+    const userId = getUserId();
     const { name, email } = req.body;
 
     if (!name || !email) {

@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
-import { itemVariants } from "../lib/motion";
 import { Button } from "./ui/Button";
 import { formatPrice } from "../lib/utils";
 

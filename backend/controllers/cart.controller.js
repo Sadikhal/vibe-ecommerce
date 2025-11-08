@@ -2,15 +2,11 @@
 import CartItem from "../models/cart.model.js";
 import Product from "../models/product.model.js";
 import { createError } from "../lib/createError.js";
-
-
-const getUserId = (req) => {
-  return req.headers["x-user-id"] || req.body?.userId || "demoUser";
-};
+import { getUserId } from "../lib/utils.js";
 
 export const getCart = async (req, res, next) => {
   try {
-    const userId = getUserId(req);
+    const userId = getUserId();
     const items = await CartItem.find({ userId }).populate("product");
     const total = items.reduce((sum, item) => sum + (item.product?.price || 0) * item.qty, 0);
 
