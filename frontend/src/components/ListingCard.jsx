@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { Button } from "./ui/Button";
 import { formatPrice } from "../lib/utils";
-import { Link } from "react-router-dom";
+
 
 const ListingCard = ({ data }) => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const ListingCard = ({ data }) => {
       <div
         className="col-span-1 cursor-pointer w-full group relative border rounded-xl flex flex-col pb-1 border-borderSlate"
       >
-        <Link to = "" className="w-full transition duration-0">
+        <div className="w-full transition duration-0">
           <div className="flex flex-col w-full">
             <div className="relative overflow-hidden rounded-xl">
               <img
